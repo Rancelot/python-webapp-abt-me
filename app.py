@@ -19,6 +19,12 @@ def load_lottieurl(url):
         return None
     return r.json()
 
+# Use local CSS
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+local_css("style/style.css")
 
 # ---- HEADER SECTION ----
 with st.container():
@@ -79,3 +85,30 @@ with st.container():
                  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                  """)
         st.markdown("[Watch a Video Here...](https://youtu.be/uZFROsvADpo?si=RBUogksiKPJ_xuDa)")
+        
+
+# ---- CONTACT ----
+with st.container():
+    st.write("---")
+    st.header("Get In Touch With Me!")
+    st.write("##")
+    
+    #using https://formsubmit.co/ form functionality
+    contact_form_html_inject = """
+        <form action="https://formsubmit.co/rpucut@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your message here" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    """
+    left_column, right_column = st.columns(2)
+    with left_column:
+        st.markdown(contact_form_html_inject, unsafe_allow_html=True)
+    with right_column:
+        st.empty()
+        # st.write("Copyright 2023")
+    
+    
+    
