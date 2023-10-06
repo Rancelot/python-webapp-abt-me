@@ -1,3 +1,4 @@
+from PIL import Image
 import requests
 import streamlit as st 
 from streamlit_lottie import st_lottie 
@@ -8,6 +9,9 @@ st.set_page_config(page_title="Who is Rafael?", page_icon=":thinking_face:", lay
 
 # ---- LOAD ASSETS ----
 lottie_coding_asset = "https://lottie.host/44c52eec-5f86-4730-9081-a1de1ea0f5fa/HLiCTm4gEu.json"
+img_tech_desk = Image.open("images/pexels-christina-morillo-1181675.jpg")
+img_tech_box = Image.open("images/pexels-cottonbro-studio-4705635.jpg")
+
 
 def load_lottieurl(url):
     r = requests.get(url)
@@ -51,9 +55,7 @@ with st.container():
     st.write("##")
     image_column, text_column = st.columns((1,2))
     with image_column:
-        # insert image
-        pass
-        
+        st.image(img_tech_desk)
     with text_column:
         st.subheader("Project 01: Subheader inside the Projects Section of Website")
         st.write("""
