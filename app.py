@@ -65,3 +65,17 @@ with st.container():
                  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                  """)
         st.markdown("[Watch a Video Here...](https://youtu.be/8H0QjUAnVQk?si=FirtCNMk5Dki9r6p)")
+with st.container():
+    st.write("##")
+    image_column, text_column = st.columns((1,2))
+    with image_column:
+        st.image(img_tech_box)
+    with text_column:
+        st.subheader("Project 02: Subheader inside the Projects Section of Website")
+        st.write("""
+                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                 """)
+        st.markdown("[Watch a Video Here...](https://youtu.be/uZFROsvADpo?si=RBUogksiKPJ_xuDa)")
